@@ -1,0 +1,30 @@
+body, html { 
+    overflow-x: hidden; 
+    overflow-y: auto;
+  
+}
+
+.btn-primary{
+    background-color: green;
+    color: whitesmoke;
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom:40px;
+    height: 1px;
+    width: 200px;
+    text-align:center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius:50px;
+}
+.container{
+    /* background: rgb(128, 0, 0); */
+}
+
+main{
+    background-color: blueviolet;
+}
+
+h1{
+    background-color: antiquewhite;
+}

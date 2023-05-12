@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h1>BATTLE ROYALE - LET'S GO!</h1>
+</div>
+
+
+
+<div class="card-container">
+    <div style="display:flex; align-items: center;">
+        <h1 style="display: flex; align-items: center">{{ user1 }}</br>Wins: {{ user1.wins }}<br>Losses: {{ user1.losses }}<br>Ties: {{ user1.ties }}</h1>
+    </div>
+    {% for pokemon in team1 %}
+
+    <div class="card mb-3" style="max-width: 600px; margin: 10px;">
+        <div class="card-body">
+            <h4 class="card-title">{{pokemon.name}}</h4>
+            <p class="card-text">Base ATK: {{pokemon.attack}}</p>
+            <p class="card-text">Base HP: {{pokemon.hp}}</p>
+            <p class="card-text">Base DEF: {{pokemon.defense}}</p>
+            <figure class="pokemon-card-img-container">
+                <figure ><img src="{{pokemon.pokemon_img}}" class="img-fluid rounded-start"></figure>
+            </figure>
+            <br> 
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% if overall_points_team1 > overall_points_team2 %}
+{% set winner = user1 %}
+
+
+<p style="text-align:center"><span>{{ user1 }} HAS WON! {{overall_points_team1}} points vs. {{ user2 }}'S {{overall_points_team2}} points</span></p>
+
+{% elif overall_points_team2 > overall_points_team1 %}
+{% set winner = user2 %}
+
+<p style="text-align:center"><span>{{ user2}} HAS WON! {{overall_points_team2}} points vs. {{ user1 }}'S {{overall_points_team1}} points</span></p>
+{% endif %}
+
+
+<div class="card-container">
+    <div style="display:flex; align-items: center;">
+        <h1 style="display: flex; align-items: center">{{ user2 }}</br>Wins: {{ user2.wins }}<br>Losses: {{ user2.losses }} <br>Ties: {{ user2.ties }}</h1>
+    </div>
+    {% for pokemon in team2 %}
+
+    <div class="card mb-3" style="max-width: 600px; margin: 10px;">
+        <div class="card-body">
+            <h4 class="card-title">{{pokemon.name}}</h4>
+            <p class="card-text">Base ATK: {{pokemon.attack}}</p>
+            <p class="card-text">Base HP: {{pokemon.hp}}</p>
+            <p class="card-text">Base DEF: {{pokemon.defense}}</p>
+            <figure class="pokemon-card-img-container">
+                <figure>img src="{{pokemon.pokemon_img}}" class="img-fluid rounded-start"</figure>
+            </figure>
+        </div>
+    </div>
+
+
+
+    {% endfor %}
+</div>
+{% endblock %}

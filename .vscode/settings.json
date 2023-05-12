@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "pokemonapi",
+            "connectString": "postgres://raniitgp:evHVjztkXX7N7guZ8vdDYg1F0ubQ2jQL@raja.db.elephantsql.com/raniitgp"
+        }
+    ]
+}
